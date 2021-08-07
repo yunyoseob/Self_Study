@@ -11,6 +11,7 @@
 - Python
 - R
 - SQL
+- Coding_Test_Practice(코딩테스트연습)
 - Machine Learning(머신러닝)
 - Deep Learning(딥러닝)
 - Reinforcement Learning(강화학습)
