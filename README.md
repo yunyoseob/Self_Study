@@ -17,5 +17,5 @@
 - Mixture Model(혼합모델)
 - Linux OS 
 - Mac OS
-- Kaggle
-- D
+- Kaggle(캐글)
+- Dacon(데이콘)
