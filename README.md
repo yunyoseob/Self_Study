@@ -7,9 +7,8 @@
 
 앞으로의 공부 계획 및 self_study category 후보
 
-- ADsP(데이터분석 준전문가)
+- ADsP(데이터분석 준전문가) & R
 - Python
-- R
 - SQL
 - Coding_Test_Practice(코딩테스트연습)
 - Machine Learning(머신러닝)
