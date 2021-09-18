@@ -7,7 +7,6 @@
 
 앞으로의 공부 계획 및 self_study category 후보
 
-- ADsP(데이터분석 준전문가) & R
 - Python
 - SQL
 - Coding_Test_Practice(코딩테스트연습)
@@ -19,3 +18,7 @@
 - Mac OS
 - Kaggle(캐글)
 - Dacon(데이콘)
+- 수학(Mathmatics for Machine Learning, 선형대수, 미적분학, 확률론, 공업수학)
+- 통계학(Mathmatical Statistics)
+- 논문리뷰
+
