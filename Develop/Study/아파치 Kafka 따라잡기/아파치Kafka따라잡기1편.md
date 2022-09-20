@@ -165,12 +165,12 @@ localhost:2181 --replica 1 --partition 1 --topic kafkatopic
 기본 구조로, 생산자는 카프카 브로커에 생성된 카프카 토픽으로 메시지를 보낸다. 카프카 브로커는 카프카 서버로 동작한다.
 소비자는 메시지를 얻기 위해 카프카 토픽을 구독한다.
 
-<img src="/image/kafka_architecture.PNG" alt="no-image">
+![kafka_architecture](https://user-images.githubusercontent.com/81727895/191252896-fa29dd00-afcf-46ca-b42e-ab05a85ac2a0.PNG)
 
 하나의 메시지는 소비자 그룹 안의 하나의 프로세스에 의해 소비되고
 하나의 메시지가 여러 소비자에 의해 소비돼야 하는 요규조건이 있다면 이러한 소비자들은 다른 소비자 그룹에 속하도록 해야 한다.
 
-<img src="/image/kafka_2.PNG" alt="no-image">
+![kafka_2](https://user-images.githubusercontent.com/81727895/191252963-b222c8aa-4b1d-4c5b-a795-d2a93b1aa6f3.PNG)
 
 카프카 디자인을 보면 소비한 메시지의 상태는 메시지 소비자에 의해서만 유지되고 무엇이 누구에게 소비되었는지에 대한 기록은 카프카 브로커에 유지하지 않는다.
 
@@ -202,7 +202,8 @@ localhost:2181 --replica 1 --partition 1 --topic kafkatopic
 
 카프카는 높은 확장성을 가지고 있지만, 카프카 클러스터의 메시지 견고성과 확장성을 위해서 어떠한 브로커 실패 시에도 복제본을 사용해 메시지를 발행하고 소비하는 것을 보장한다. 카프카에서 소비자와 생산자 둘 다 리플리케이션을 고려해 동작한다. 다음 그림은 카프카의 리플리케이션 동작을 나타낸다.
 
-<img src="/image/Kafka_Cluster_Replication.png" alt="no-image">
+
+![Kafka_Cluster_Replication](https://user-images.githubusercontent.com/81727895/191252684-0f80f040-18ee-4c87-9aa8-8920eb7559cf.png)
 
 리플리케이션에서 각 파티션은 'n'개의 리플리카를 가지고 있고 'n-1'실패까지 메시지 전달을 보장한다. 'n'개의 리플리카 중 하나의 리플리카는 나머지 리플리카의 리드 리플리카로 행동한다. 주키퍼는 리드 리플리카와 현재 동기된 팔로워 리플리카 정보를 가지고 있다.
 
