@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배열 테스트</title>
+    <script type="text/javascript">
+        var series=[];
+
+        function addSeriesData(seriesList){
+            seriesList.forEach(function(name){
+                var component={
+                    type:'line',
+                    name:name,
+                    data:[],
+                    visible:true,
+                };
+                series.push(component);
+            })
+        }
+
+        // case 1
+        var seriesList=[1,2,3,4,5,6,7,8,9,10];
+        addSeriesData(seriesList);
+
+        /*
+       console.log("1 :: series >>> : "+JSON.stringify(series));
+
+       var newSeriesList=[1,3,5,7,9];
+
+       for(var idx=0; idx<seriesList.length; idx++){
+           if(seriesList[idx]!=newSeriesList[idx]){
+               seriesList.splice(idx, 1);
+               idx--;
+           }
+       }
+       series=[];
+       addSeriesData(seriesList);
+       console.log("2 :: series >>> : "+JSON.stringify(series));
+       */
+
+        // case 2
+        newSeriesList=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+        for(var idx=0; idx<newSeriesList.length; idx++){
+            if(seriesList[idx]!=newSeriesList[idx]){
+                seriesList.push(idx, 1);
+                idx--;
+            }
+        }
+        // console.log("seriesList >>> : "+seriesList);
+        // console.log("newSeriesList >>> : "+newSeriesList);
+    </script>
+</head>
+<body>
+        ArrayList Test
+</body>
+</html>
