@@ -1,0 +1,12 @@
+<!-- latest_question_list: index() 뷰 함수에서 넘겨주는 파라미터 -->
+{% if latest_question_list %}
+  <ul>
+    {% for question in latest_question_list %}
+        <!-- question_text를 순서 없는 리스트로 화면에 보여주고, 각 테스트에 URL 링크 연결 -->
+        <li><a href="/polls/{{ question.id }}/">{{ question.question_test }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+<!-- latest_question_list 객체에 내용이 없으면 아래 내용 출력 -->
+   <p>No polls are available </p>
+{% endif %}

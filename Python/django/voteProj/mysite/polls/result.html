@@ -1,0 +1,9 @@
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+    {% for choice in question.choice_set.all %}
+        <!-- choice.votes 숫자를 보여 준 뒤, choice, votes 값에 따라 복수 접미사(s)를 붙여줌 -->
+       <li>{{ choice.choice_text}} - {{choice.votes}} vote{{ choice.votes|pluralize }}</li>
+</ul>
+
+<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
