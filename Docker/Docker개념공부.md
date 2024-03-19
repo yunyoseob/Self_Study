@@ -38,9 +38,11 @@ CentOS와 RHEL의 경우 /var/log/messages의 파일에서 확인 가능
 
 **#4 도커 run vs create 명령어**
 
+```
 run   : docker pull(이미지가 없을 때) -> docker create -> docker start -> docker attach (-i -t 옵션을 사용했을 때)
 
 create: docker pull(이미지가 없을 때) -> docker create
+```
 
 **#5 도커 exit vs Ctrl + P, Q 명령어**
 
@@ -50,9 +52,10 @@ Ctrl + P,Q: 컨테이너를 정지하지 않고 빠져나옴
 
 **#6 외부에 컨테이너의 애플리케이션 노출하기: eth0의 IP와 port를 호스트의 port로 바인딩**
 
+```
 [호스트의 포트][컨테이너의 포트]
 
-```
+
 ex) docker run -i -t --name mywebserver -p80:80 ubuntu:14.04
 ```
 
