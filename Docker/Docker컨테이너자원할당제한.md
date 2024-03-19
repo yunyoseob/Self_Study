@@ -66,7 +66,7 @@ docker run -d --name cpus_container \
 # --cpu-period=100000 \ --cpu-quota=500000 과 동일함
 ```
 
-**5. Block I/O 제한
+**5. Block I/O 제한**
 
 컨테이너 내부에서 파일을 읽고 쓰는 대역폭 제한 (하나의 컨테이너가 블록 입출력을 과도하게 사용하지 않게 설정하기 위함)
 
