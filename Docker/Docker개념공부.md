@@ -12,6 +12,7 @@
 
 **#3 docker run: 도커 컨테이너 명령어 옵션**
 
+```
 -i -t: 컨테이너와 상호(interactive) 입출력을 가능하게 하는 옵션
 
 -d: -i -t가 컨테이너 내부로 진입하도록 attach 가능한 상태로 설정한다면, -d는 Detached 모드로 컨테이너를 실행합니다. Detached 모드는 컨테이너를 백그라운드에서 동작하는 애플리케이션으로써 실행하도록 설정합니다.
@@ -21,31 +22,39 @@
 --log-opt max-size=10k: 로그 파일 최대 크기
 
 --log-opt max-file=3: 로그 파일 개수
+```
+
 
 로그 확인 디렉토리 및 파일 명
 cat /var/lib/docker/containers/${CONTAINER_ID}/${CONTAINER_ID}-json.log
 
 --log-driver=syslog: 컨테이너의 로그를 syslog에 보내 저장
 
+```
 ubuntu의 경우 /var/logs/syslog의 파일에서 확인 가능
 
 CentOS와 RHEL의 경우 /var/log/messages의 파일에서 확인 가능
+```
 
 **#4 도커 run vs create 명령어**
 
 run   : docker pull(이미지가 없을 때) -> docker create -> docker start -> docker attach (-i -t 옵션을 사용했을 때)
+
 create: docker pull(이미지가 없을 때) -> docker create
 
 **#5 도커 exit vs Ctrl + P, Q 명령어**
 
 exit: 컨테이너 내부를 빠져나오면서 동시에 컨테이너를 정지
+
 Ctrl + P,Q: 컨테이너를 정지하지 않고 빠져나옴
 
 **#6 외부에 컨테이너의 애플리케이션 노출하기: eth0의 IP와 port를 호스트의 port로 바인딩**
 
 [호스트의 포트][컨테이너의 포트]
 
+```
 ex) docker run -i -t --name mywebserver -p80:80 ubuntu:14.04
+```
 
 apach web server(172 대역을 가진 컨테이너의 NAT IP와 80포트로 서비스 함)
 
@@ -59,13 +68,20 @@ mysql 컨테이너의 경우, 컨테이너를 삭제하면 컨테이너 계층�
 
 컨테이너의 데이터를영속적 데이터로 활용할 수 있는 방법 중 가장 활용하기 쉬운 방법이 볼륨을 활용하는 것.
 
+```
 [호스트의 공유 디렉토리]:[컨테이너의 공유 디렉터리]
+```
+
 -v 옵션: 호스트의 디렉토리와 컨테이너의 공유 디렉토리를 통해 데이터를 공유함
 
 --volumes-from: 볼륨을 사용하려난 컨테이너에 볼륨 컨테이너에 연결 데이터를 간접적으로 공유받음
 
+```
 [볼륨의 이름:컨테이너의 공유 딜렉토리]
+```
+
 docker volume: 도커 자체에서 제공하는 볼륨 기능을 활용해 데이터를 보존할 수도 있음
+
 ex) docker volume create
 
 - 자세한 정보를 보고 싶을 대는 docker inspect명령어를 사용하여 실제 존재하는 볼륨이 어딨는지 알 수 있다.
@@ -75,6 +91,7 @@ ex) docker volume create
 **#8. 네트워크 옵션**
 
 --net-alias 옵션의 값을 각각 다르게 설정하면 다른 컨테이너에서  해당 호스트 이름으로 여러 개의 컨테이너에 접근할 수 있다.
+
 네트워크 체크 명령어 --net: 리눅스에서 ping과 같음 
 
 --link 옵션을 주면, 컨테이너 IP가 변경되어도 별명으로 컨테이너를 찾을 수 있게 DNS에 자동으로 관리된다.
@@ -83,12 +100,13 @@ ex) docker volume create
 
 docker logs [컨테이터 이름]
 
+```
 --tail [숫자]: 마지막 몇 줄만 읽을지 주는 옵션
 
 --since [유닉스 시간]: 특정 시간 이후의 로그 화인
 
 -t: 타임스탬프로 표시
-
+```
 
 
 
