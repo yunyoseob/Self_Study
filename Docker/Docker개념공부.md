@@ -25,8 +25,11 @@
 ```
 
 
-로그 확인 디렉토리 및 파일 명
+로그 확인 디렉토리 및 파일 명 읽기
+
+```
 cat /var/lib/docker/containers/${CONTAINER_ID}/${CONTAINER_ID}-json.log
+```
 
 --log-driver=syslog: 컨테이너의 로그를 syslog에 보내 저장
 
@@ -110,6 +113,3 @@ docker logs [컨테이터 이름]
 
 -t: 타임스탬프로 표시
 ```
-
-
-
